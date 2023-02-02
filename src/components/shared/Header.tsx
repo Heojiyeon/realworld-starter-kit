@@ -8,7 +8,7 @@ const HeaderContainer = styled.div`
 `;
 
 const Header = () => {
-  return <HeaderContainer>header</HeaderContainer>;
+  return <HeaderContainer>Header</HeaderContainer>;
 };
 
 export default Header;
