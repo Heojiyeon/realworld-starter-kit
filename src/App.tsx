@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Header from "./components/shared/Header";
 import Footer from "./components/shared/Footer";
+import Header from "./components/shared/Header";
+import EditArticle from "./pages/EditArticle";
 import Home from "./pages/Home";
+import Settings from "./pages/Settings";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import Settings from "./pages/Settings";
-import EditArticle from "./pages/EditArticle";
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<SignUp />} />
-          <Route path="/register" element={<SignIn />} />
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/register" element={<SignUp />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/editor" element={<EditArticle />} />
         </Routes>

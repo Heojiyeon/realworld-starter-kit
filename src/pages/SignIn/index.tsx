@@ -1,12 +1,11 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type FormValues = {
-  username: string;
   email: string;
   password: string;
 };
 
-const SignIn = () => {
+const SignUp = () => {
   const { register, handleSubmit } = useForm<FormValues>();
 
   const onSubmit: SubmitHandler<FormValues> = data => console.log(data);
@@ -14,31 +13,16 @@ const SignIn = () => {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <input {...register("email", { required: true })} placeholder="Email" />
         <input
-          {...register("username", { required: true })}
-          placeholder="Username"
-        />
-        <input
-          {...register("email", {
-            required: true,
-            minLength: 6,
-            maxLength: 20,
-          })}
-          placeholder="Email"
-        />
-        <input
-          {...register("password", {
-            required: true,
-            minLength: 6,
-            maxLength: 20,
-          })}
-          placeholder="password"
+          {...register("password", { required: true })}
+          placeholder="Password"
           type="password"
         />
-        <input type="submit" value="Sign up" />
+        <input type="submit" value="Sign In" />
       </form>
     </div>
   );
 };
 
-export default SignIn;
+export default SignUp;
